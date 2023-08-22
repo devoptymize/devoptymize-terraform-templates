@@ -23,6 +23,6 @@ Once the Variable and the Module is ready follow the below commands to create th
 
 ### Contributing
 
-We welcome contributions from the community to enhance the terraform templates. If you would like to contribute, please follow our guidelines outlined in the CONTRIBUTING.md file. You can submit feature requests, or pull requests to help us improve the template.
+We welcome contributions from the community to enhance the terraform templates. If you would like to contribute, please follow our guidelines outlined in the [CONTRIBUTING.md](./CONTRIBUTING.md) file. You can submit feature requests, or pull requests to help us improve the template.
 
 ### License
