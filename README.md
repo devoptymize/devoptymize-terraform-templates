@@ -1,16 +1,35 @@
-# DevOptymize_Terraform_Templates
+# DevOptymize-Terraform-Templates
 
-The DevOptymize_Terraform_Templates repository is a version-controlled repository that stores Terraform Templates for Provisioning Resources and Blueprints.
+The DevOptymize-Terraform-Templates repository hosts the collection of Terraform Templates, which can be used to provision individual resources and blueprints on AWS.
 
 ### Features
 
-Create AWS resource using  terraform effortlessly
+- Ready to use templates, helps in provisioning AWS resource and blueprints effortlessly.
+- Blue prints
+  - [Amazon VPC Configuration Guide](./services/aws-vpc-config)
+  - [AWS DevOps pipeline architecture - CI/CD of Static-website (S3 CDN stack)](./services/aws-cicd-sw)
+  - [AWS DevOps Pipeline architecture - CI/CD for Nodejs backend application](./services/aws-cicd-ms)
 
-### Installation
+- Resources
+  - [Network](./services/network)
+  - [Key Pair](./services/key-pair)
+  - [Security Group](./services/security-group)
+  - [EC2](./services/ec2)
+  - [Launch Template](./services/launch-template)
+  - [ASG](./services/asg)
+  - [Target Group](./services/lb-target-group)
+  - [Load Balancer](./services/lb)
+  - [RDS](./services/rds)
+  - [Route53](./services/route-53)
+  - [S3](./services/s3)
+  - [ECR](./services/ecr)
+ 
+    
+### Pre-Requisites
 
 Dependencies to create the AWS resource using Terraform:
 
-- Make sure Terraform is installed.
+- Terraform 1.0.x or newer.
 
 ### Usage
 
