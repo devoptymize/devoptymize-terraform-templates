@@ -48,7 +48,7 @@ locals {
 resource "aws_security_group" "sg_bcknd" {
 name        = "${var.environment}-${var.stack_name}-sg-bcknd"
 description = "${var.environment}-${var.stack_name}-sg-bcknd"
-vpc_id      = var.vpc_id
+vpc_id      = module.network.vpc_id
 
 ingress {
   description = "HTTP access"
@@ -83,7 +83,7 @@ egress {
 resource "aws_security_group" "sg_frntnd" {
 name        = "${var.environment}-${var.stack_name}-sg-frntnd"
 description = "${var.environment}-${var.stack_name}-sg-frntnd"
-vpc_id      = var.vpc_id
+vpc_id      = module.network.vpc_id
 
 ingress {
   description = "HTTP access"
