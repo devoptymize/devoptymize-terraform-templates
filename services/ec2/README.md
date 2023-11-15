@@ -1,9 +1,15 @@
-<!-- BEGIN_TF_DOCS -->
+# EC2 
+
+
+## Installation
+Dependencies to create the AWS resource using Terraform: 
+- Make sure Terraform is installed.
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.16.2|
 
 ## Modules
 
@@ -37,4 +43,16 @@
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | The VPC Subnet ID to launch in | `string` | `""` | no |
 | <a name="input_win_device_name"></a> [win\_device\_name](#input\_win\_device\_name) | aws windows\_devices\_name | `any` | <pre>[<br>  "xvdb",<br>  "xvdc",<br>  "xvdd",<br>  "xvde",<br>  "xvdf"<br>]</pre> | no |
 
+## Outputs
+
+No outputs.
+
+
+
+### Usage
+Once the Variable and the Module is ready follow the below commands to create the resource
+- ```terraform init``` to download the modules
+- ```terraform plan``` to generate an execution plan for your infrastructure. 
+- ```terraform apply``` to apply the changes and create the infrastructure.
+- ```terraform destroy``` to delete the resource which is created through terraform.
 <!-- END_TF_DOCS -->

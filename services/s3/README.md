@@ -1,23 +1,35 @@
-<!-- BEGIN_TF_DOCS -->
+## S3 on AWS using Terraform Template
+
+- This Terraform template is designed for creating and managing S3 on Amazon Web Services (AWS). It allows individuals and businesses to store and retrieve data, such as documents, images, videos, and backups, securely and durably in the cloud. S3 offers features like high scalability, data redundancy, versioning, and fine-grained access controls, making it suitable for a wide range of applications, from data archiving to hosting static websites and powering data analytics pipelines. 
+- The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code. 
+
+
+## Installation
+Dependencies to create the AWS resource using Terraform: 
+- Make sure Terraform is installed
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.15.0 |
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_s3_bucket"></a> [s3\_bucket](#module\_s3\_bucket) | terraform-aws-modules/s3-bucket/aws | 3.10.1 |
+| Name | Type |
+|------|------|
+| [module_s3_bucket](https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest) | module |
+
+## Resources
+
+No resource
 
 ## Inputs
 
+
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_bucket_key_enabled"></a> [bucket\_key\_enabled](#input\_bucket\_key\_enabled) | Specify whether to use an S3 Bucket Key for encryption | `bool` | `null` | no |
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the bucket | `string` | `""` | no |
-| <a name="input_bucket_policy"></a> [bucket\_policy](#input\_bucket\_policy) | The bucket policy rules in JSON format | `any` | `""` | no |
-| <a name="input_region"></a> [region](#input\_region) | aws region | `string` | `""` | no |
-
-<!-- END_TF_DOCS -->
+| <a name="input_cdn_name"></a> [Environment\_name](#input\_alias\_name) | The name of the environment in which resources needs to be provisioned. | `string` | `""` | Yes |
+| <a name="input_distribution_type"></a> [bucket\_name](#input\_distribution\_type) |  A globally unique string that helps you organize and access your data within Amazon S3. Bucket names must be lowercase and can contain letters, numbers, hyphens, and periods. | `string` | `""` | yes |
+| <a name="input_acm_certificate_arn"></a> [bucket\_key\_enabled](#input\_acm\_certificate\_arn) | Bucket key enabled (S3 Object Lambda) is a feature in Amazon S3 that allows you to execute custom code on data retrieved from S3 before it is returned to the requester.  | `string` | `""` | no |
+| <a name="input_origin_shield"></a> [bucket\_policy](#input\_origin\_shield) | Bucket policies are typically written in JSON format and can be used to grant or restrict access to specific users, AWS accounts, or even the public | `string` | `""` | Yes |
