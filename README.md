@@ -9,7 +9,11 @@ The DevOptymize-Terraform-Templates repository hosts the collection of Terraform
   - [Amazon VPC Configuration Guide](./services/aws-vpc-config)
   - [AWS DevOps pipeline architecture - CI/CD of Static-website (S3 CDN stack)](./services/aws-cicd-sw)
   - [AWS DevOps Pipeline architecture - CI/CD for Nodejs backend application](./services/aws-cicd-ms)
-
+  - [Refined 3-tier application architecture](./services/aws-3t-arch)
+  - [Micro service architecture with EKS, S3 CDN and PSQL](./services/aws-eks-cdn)
+  - [Amazon RDS on AWS](./services/aws-rds-stack)
+  - [Fintech Blueprint on AWS](./services/aws-fintech)
+  - [Three-Tier Architecture for Hosting WordPress on AWS](./services/aws-3t-wp)
 - Resources
   - [Network](./services/network)
   - [Key Pair](./services/key-pair)
@@ -23,7 +27,9 @@ The DevOptymize-Terraform-Templates repository hosts the collection of Terraform
   - [Route53](./services/route-53)
   - [S3](./services/s3)
   - [ECR](./services/ecr)
- 
+  - [EKS](./services/eks)
+  - [RDS cluster](./services/rds-cluster)
+  - [CloudFront](./services/cloudfront)
     
 ### Pre-Requisites
 
