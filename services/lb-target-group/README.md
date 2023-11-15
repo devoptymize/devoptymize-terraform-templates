@@ -1,9 +1,17 @@
-<!-- BEGIN_TF_DOCS -->
+## AWS Target Group using terraform template
+- This Terraform scripts are used to create Target Group in AWS cloud.
+- The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code
+
+## Installation
+Dependencies to create the AWS resource using Terraform: 
+- Make sure Terraform is installed.
+
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+
 
 ## Resources
 
@@ -33,4 +41,11 @@
 | <a name="input_target_type"></a> [target\_type](#input\_target\_type) | The list of the target type | `string` | `""` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Select the VPC with the instances that you want to include in the target group | `string` | `""` | no |
 
-<!-- END_TF_DOCS -->
+## Outputs
+
+### Usage
+Once the Variable and the Module is ready follow the below commands to create the resource
+- ```terraform init``` to download the modules
+- ```terraform plan``` to generate an execution plan for your infrastructure. 
+- ```terraform apply``` to apply the changes and create the infrastructure.
+- ```terraform destroy``` to delete the resource which is created through terraform.

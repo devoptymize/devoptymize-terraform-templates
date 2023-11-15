@@ -1,4 +1,4 @@
-module "private_zones" {
+module "private-hosted-zones" {
   source  = "terraform-aws-modules/route53/aws//modules/zones"
   version = "~> 2.0"
 
@@ -20,7 +20,7 @@ module "private_zones" {
 }
 
 
-module "public_zones" {
+module "public-hosted-zones" {
   source  = "terraform-aws-modules/route53/aws//modules/zones"
   version = "~> 2.0"
   count   = var.route53_vpcid == [] ? 1 : 0

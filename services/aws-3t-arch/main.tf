@@ -3,7 +3,7 @@ data "aws_availability_zones" "available" {
 }
 
 ## Terraform module for creating the network part ##
-module "network" {
+module "vpc" {
 source = "terraform-aws-modules/vpc/aws"
 name = "${var.environment}-${var.stack_name}-vpc"
 cidr   = var.vpc_cidr_range
@@ -27,7 +27,7 @@ one_nat_gateway_per_az  = true   # Set to true to create NAT gateway per AZ
 
 ## Terraform script for creating the security group for private webserver ##
 resource "aws_security_group" "sg_alb_bcknd" {
-vpc_id      = module.network.vpc_id
+vpc_id      = module.vpc.vpc_id
 name        = "${var.environment}-${var.stack_name}-sg-alb-bcknd"
 description = "${var.environment}-${var.stack_name} backednd alb security group"
 ingress     = local.ingressrules
@@ -48,7 +48,7 @@ locals {
 resource "aws_security_group" "sg_bcknd" {
 name        = "${var.environment}-${var.stack_name}-sg-bcknd"
 description = "${var.environment}-${var.stack_name}-sg-bcknd"
-vpc_id      = module.network.vpc_id
+vpc_id      = module.vpc.vpc_id
 
 ingress {
   description = "HTTP access"
@@ -67,7 +67,7 @@ egress {
 
 ## Terraform script for creating the security group for public web server ##
 resource "aws_security_group" "sg_alb_frntnd" {
-vpc_id      = module.network.vpc_id
+vpc_id      = module.vpc.vpc_id
 name        = "${var.environment}-${var.stack_name}-sg-alb-frntnd"
 description = "${var.environment}-${var.stack_name} frontend alb security group"
 ingress     = local.ingressrules
@@ -83,7 +83,7 @@ egress {
 resource "aws_security_group" "sg_frntnd" {
 name        = "${var.environment}-${var.stack_name}-sg-frntnd"
 description = "${var.environment}-${var.stack_name}-sg-frntnd"
-vpc_id      = module.network.vpc_id
+vpc_id      = module.vpc.vpc_id
 
 ingress {
   description = "HTTP access"
@@ -113,8 +113,7 @@ max_size                  = var.asg_max_size
 desired_capacity          = var.asg_desired_capacity
 wait_for_capacity_timeout = 0
 health_check_type         = "ELB"
-vpc_zone_identifier       = module.network.private_subnets
-#concat(module.network.public_subnets, module.network.private_subnets)
+vpc_zone_identifier       = module.vpc.private_subnets
 security_groups           = [aws_security_group.sg_bcknd.id]
 target_group_arns         = module.alb_bcknd.target_group_arns
 
@@ -177,7 +176,7 @@ max_size                  = var.asg_max_size
 desired_capacity          = var.asg_desired_capacity
 wait_for_capacity_timeout = 0
 health_check_type         = "ELB"
-vpc_zone_identifier       = module.network.private_subnets
+vpc_zone_identifier       = module.vpc.private_subnets
 security_groups           = [aws_security_group.sg_frntnd.id]
 target_group_arns         = module.alb_frntnd.target_group_arns
 ## Launch template
@@ -234,8 +233,8 @@ name = "${var.environment}-${var.stack_name}-alb-frntnd"
 
 load_balancer_type = "application"
 
-vpc_id             = module.network.vpc_id
-subnets            = module.network.public_subnets
+vpc_id             = module.vpc.vpc_id
+subnets            = module.vpc.public_subnets
 security_groups    = [aws_security_group.sg_alb_frntnd.id]
 
 https_listeners = [
@@ -277,8 +276,8 @@ name = "${var.environment}-${var.stack_name}-alb-bcknd"
 
 load_balancer_type = "application"
 
-vpc_id             = module.network.vpc_id
-subnets            = module.network.private_subnets
+vpc_id             = module.vpc.vpc_id
+subnets            = module.vpc.private_subnets
 security_groups    = [aws_security_group.sg_alb_bcknd.id]
 
 https_listeners = [
@@ -314,7 +313,7 @@ tags = {
 
 ## Terraform script for creating the security group ##
 resource "aws_security_group" "rds_sg" {
-  vpc_id      = module.network.vpc_id
+  vpc_id      = module.vpc.vpc_id
   name        = "${var.environment}-${var.stack_name}-sg-rds"
   description = "${var.environment}-${var.stack_name} rds security group"
   ingress {
@@ -337,7 +336,7 @@ source  = "terraform-aws-modules/rds/aws//modules/db_subnet_group"
 version = "5.9.0"
 name         = "${var.environment}-${var.stack_name}-db-subnetgroup"
 description  = "${var.environment}-${var.stack_name} db subnetgroup"
-subnet_ids = tolist(module.network.database_subnets)
+subnet_ids = tolist(module.vpc.database_subnets)
 
 }
 
@@ -349,7 +348,7 @@ engine         = var.engine_type
 engine_version = var.engine_version
 instance_class = var.db_instance_class
 skip_final_snapshot = true
-vpc_id = module.network.vpc_id
+vpc_id = module.vpc.vpc_id
 db_cluster_instance_class = var.db_instance_class
 allocated_storage = var.allocated_storage
 storage_type = "io1"

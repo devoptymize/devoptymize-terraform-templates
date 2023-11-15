@@ -1,9 +1,16 @@
-<!-- BEGIN_TF_DOCS -->
+## Amazon VPC Configuration Guide using terraform template
+- This Terraform scripts are used to create various AWS resources, including a Amazon Virtual Private Cloud (VPC), security groups, VPC Flowlogs, VPC Endpoint, VPC Peering, and AWS Cloudwatch logs.
+- The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code.
+
+## Installation
+Dependencies to create the AWS resource using Terraform: 
+- Make sure Terraform is installed.
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.17.0 |
 
 ## Modules
 
@@ -39,6 +46,14 @@
 | <a name="input_service_name"></a> [service\_name](#input\_service\_name) | List the service to connect vpc endpoint | `string` | `""` | no |
 | <a name="input_stack_name"></a> [stack\_name](#input\_stack\_name) | the prefix name of all created resources | `string` | `""` | no |
 | <a name="input_vpc_cidr_range"></a> [vpc\_cidr\_range](#input\_vpc\_cidr\_range) | CIDR range for the VPC | `string` | `""` | no |
-| <a name="input_vpc_endpoint_type"></a> [vpc\_endpoint\_type](#input\_vpc\_endpoint\_type) | set the vpc\_endpoint type as Interface or Gateway | `string` | `""` | no |
+| <a name="input_vpc_endpoint_type"></a> [vpc\_endpoint\_type](#input\_vpc\_endpoint\_type) | set the vpc\_endpoint type as Interface or Gateway | `string` | `""` | no |       
 
-<!-- END_TF_DOCS -->
+
+### Usage
+Once the Variable and the Module is ready follow the below commands to create the resource
+- ```terraform init``` to download the modules
+- ```terraform plan``` to generate an execution plan for your infrastructure. 
+- ```terraform apply``` to apply the changes and create the infrastructure.
+- ```terraform destroy``` to delete the resource which is created through terraform.
+
+

@@ -1,10 +1,20 @@
-<!-- BEGIN_TF_DOCS -->
+## AWS DevOps Pipeline architecture - CI/CD for Nodejs backend application
+- This Terraform scripts are used to create various AWS resources, including a AWS CodePipeline ,S3 Bucket for Artifacts,AWS SNS for Notifications,IAM Roles and policies
+- The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code
+
+## Installation
+Dependencies to create the AWS resource using Terraform: 
+- Make sure Terraform is installed.
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.16.2 |
 
+## Modules
+
+No modules.
 
 ## Resources
 
@@ -32,19 +42,26 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | n/a | `string` | `""` | no |
-| <a name="input_branch_name"></a> [branch\_name](#input\_branch\_name) | Name of the branch in the CodeCommit repository that will be monitored for changes.Whenever changes are pushed to this branch, the pipeline will automatically start. | `string` | `""` | no |
-| <a name="input_compute_type"></a> [compute\_type](#input\_compute\_type) | Type of the build environment that CodeBuild will use to build your application. | `string` | `""` | no |
-| <a name="input_emails"></a> [emails](#input\_emails) | Email address to receive notifications via Amazon SNS (Simple Notification Service). You will receive status updates and notifications about pipeline events on this email address. | `list(string)` | `[]` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | The name of env in which we need to provision the resources in AWS console. | `string` | `""` | no |
-| <a name="input_image"></a> [image](#input\_image) | The Docker image for the build environment in CodeBuild. This image will be used to run the build process for your application. | `string` | `""` | no |
-| <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | Name of the AWS CodeCommit repository where your application source code is stored. | `string` | `""` | no |
-| <a name="input_stack_name"></a> [stack\_name](#input\_stack\_name) | This name will be added as a prefix to all the resource names | `string` | `""` | no |
-| <a name="input_type"></a> [type](#input\_type) | Type of the build environment that CodeBuild will use to build your application. | `string` | `""` | no |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | n/a | `string` | `""` | |
+| <a name="input_branch_name"></a> [branch\_name](#input\_branch\_name) | Name of the branch in the CodeCommit repository that will be monitored for changes.Whenever changes are pushed to this branch, the pipeline will automatically start. | `string` | `""` |  |
+| <a name="input_compute_type"></a> [compute\_type](#input\_compute\_type) | Type of the build environment that CodeBuild will use to build your application. | `string` | `""` |  |
+| <a name="input_emails"></a> [emails](#input\_emails) | Email address to receive notifications via Amazon SNS (Simple Notification Service). You will receive status updates and notifications about pipeline events on this email address. | `list(string)` | `[]` | |
+| <a name="input_environment"></a> [environment](#input\_environment) | The name of env in which we need to provision the resources in AWS console. | `string` | `""` |  |
+| <a name="input_image"></a> [image](#input\_image) | The Docker image for the build environment in CodeBuild. This image will be used to run the build process for your application. | `string` | `""` |  |
+| <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | Name of the AWS CodeCommit repository where your application source code is stored. | `string` | `""` |  |
+| <a name="input_stack_name"></a> [stack\_name](#input\_stack\_name) | This name will be added as a prefix to all the resource names | `string` | `""` |  |
+| <a name="input_type"></a> [type](#input\_type) | Type of the build environment that CodeBuild will use to build your application. | `string` | `""` |  |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_pipeline_service_role_arn"></a> [pipeline\_service\_role\_arn](#output\_pipeline\_service\_role\_arn) | ARN of the CodePipeline Service Role |
+
+### Usage
+Once the Variable and the Module is ready follow the below commands to create the resource
+- ```terraform init``` to download the modules
+- ```terraform plan``` to generate an execution plan for your infrastructure. 
+- ```terraform apply``` to apply the changes and create the infrastructure.
+- ```terraform destroy``` to delete the resource which is created through terraform.
 <!-- END_TF_DOCS -->
