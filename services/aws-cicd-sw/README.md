@@ -1,4 +1,19 @@
 <!-- BEGIN_TF_DOCS -->
+#  AWS DevOps pipeline architecture - CI/CD of Static-website (S3 CDN stack):
+
+## Description
+![Image](./aws-cicd-sw.png)
+AWS DevOps pipeline architecture for CI/CD of a static website is versatile and can be utilized by a broad range of stakeholders involved in the software development lifecycle. It promotes collaboration, automation, and efficiency in delivering static website updates to production environments.
+The goal is to automate the build, testing, and deployment processes to achieve faster and more reliable software releases while maintaining the highest level of security and scalability. The blueprint is able to create the pipeline with Continuous Integration and Continuous Deployment (CI/CD) of a static website hosted on an S3 bucket with a CDN (Content Delivery Network) stack into the single pipeline.
+- Who can use AWS DevOps pipeline architecture - CI/CD of Static-website (S3 CDN stack):
+    - Developers can use the CI/CD pipeline to automate the building and deployment of their static website code. They benefit from faster feedback loops, ensuring that changes are deployed consistently and quickly.
+    - DevOps engineers are responsible for designing and implementing CI/CD pipelines. They can leverage this blueprint to create a scalable, automated deployment process for static websites.
+    - QA teams may use the CI/CD pipeline to deploy different versions of the static website for testing purposes. Automated testing steps can be added to the pipeline to ensure the quality of the deployed code.
+    - Infrastructure engineers can benefit from the Infrastructure as Code (IaC) components of the blueprint. They can manage and version control the AWS infrastructure using CloudFormation or Terraform.
+    - Release managers can use the pipeline to orchestrate the release process, ensuring that the correct version of the website is deployed to production and other environments.
+    - Project managers can benefit from the streamlined and automated deployment process. They can track the progress of deployments and ensure that timelines are met.
+    - Technical leads can guide and lead the implementation of the CI/CD pipeline, making architectural decisions and ensuring that the pipeline meets performance and scalability requirements.
+
 ## Providers
 
 | Name | Version |

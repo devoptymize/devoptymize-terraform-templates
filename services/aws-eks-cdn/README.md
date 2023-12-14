@@ -1,7 +1,15 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+# Microservices architecture with EKS, S3 CDN, and PostgreSQL
 
-No requirements.
+## Discription
+![Image](./aws-eks-cdn.png)
+Microservices architecture with EKS, S3 CDN, and PostgreSQL implemented through IaC is a collaborative framework that involves various roles throughout the software development and deployment lifecycle. Its modular and scalable nature makes it suitable for diverse stakeholders, promoting efficiency, maintainability, and scalability in cloud-based applications.
+Who can use Micro service architecture with EKS, S3 CDN and PSQL:
+1) Developers can leverage the microservices architecture to build and deploy individual services independently. They can work on specific microservices, taking advantage of EKS for container orchestration and scalability.
+2) DevOps engineers can utilize Terraform to define and manage the infrastructure as code (IaC), automating the deployment and scaling of microservices on EKS. They can also configure CI/CD pipelines for continuous integration and delivery
+3) System architects can design the overall microservices architecture, defining the communication patterns between services. They can use Terraform to model the infrastructure components, ensuring scalability, reliability, and fault tolerance.
+4) DBAs can be involved in setting up and managing the PostgreSQL database instances, ensuring proper configuration, backups, and monitoring.
+5) End users interact with the application that is built on the microservices architecture. The use of CDN ensures faster content delivery and a better user experience.
 
 ## Providers
 
