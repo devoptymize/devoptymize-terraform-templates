@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-#  AWS DevOps pipeline architecture - CI/CD of Static-website (S3 CDN stack):
+#  AWS DevOps pipeline architecture - CI/CD of Static-website (S3 CDN stack)
 
 ## Description
 ![Image](./aws-cicd-sw.png)
