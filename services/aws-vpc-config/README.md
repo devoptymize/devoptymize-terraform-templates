@@ -1,4 +1,20 @@
 ## Amazon VPC Configuration Guide using terraform template
+
+## Description
+![Image](./aws-vpc-config.png)
+Amazon VPC Configuration Guide provides a robust, secure, and scalable foundation for deploying applications in the cloud. It aligns with best practices for network architecture, security, and operational efficiency in AWS environments. It provides a standardized and consistent approach to managing your infrastructure deployments across different environments, making it easier to maintain and evolve your applications over time.
+The blueprint includes the setup of fundamental networking components such as VPCs, subnets, security groups, and extends to advanced features like VPC Flow Logs, VPC Endpoints, VPC Peering, and integration with AWS CloudWatch Logs.
+- Who can use Amazon VPC Configuration Blueprint?
+    - Infrastructure engineers or cloud architects responsible for designing and implementing AWS infrastructure.
+    - DevOps teams involved in automating and managing the end-to-end deployment lifecycle.
+    - Cloud architects responsible for defining cloud architecture, policies, and standards within an organization.
+    - Network administrators responsible for configuring and managing network infrastructure.
+    - Security teams responsible for defining and enforcing security policies.
+    - Application developers deploying and managing applications in AWS.
+    - Compliance teams ensuring that infrastructure configurations adhere to industry regulations and internal policies.
+    - Operations teams responsible for monitoring and maintaining deployed infrastructure.
+
+## Introduction
 - This Terraform scripts are used to create various AWS resources, including a Amazon Virtual Private Cloud (VPC), security groups, VPC Flowlogs, VPC Endpoint, VPC Peering, and AWS Cloudwatch logs.
 - The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code.
 

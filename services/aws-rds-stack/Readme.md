@@ -1,4 +1,17 @@
-## Amazon RDS on AWS using Terraform Template
+# Amazon RDS on AWS using Terraform Template
+
+## Description
+![Image](./aws-rds-stack.png)
+Amazon RDS on AWS IaC Blueprint is a collaborative tool that involves various roles throughout the software development and deployment lifecycle. It provides a standardized and automated approach to provisioning and managing Amazon RDS instances, promoting consistency, security, and efficiency in database management.
+We have used following components VPC, Public Subnets, Private Subnets, Database subnets, NAT gateways, Internet gateways, Linux bastion hosts, Autoscaling group, RDS cluster, Cloud watch, Amazon SNS, and Amazon KMS. Also, able to provision a virtual private cloud (VPC) configured with public and private subnets, according to AWS best practices, to provide you with your own virtual network on AWS.
+- Who can use Amazon RDS on AWS:
+    -  Cloud administrators manage and monitor the AWS resources, including the Amazon RDS instance. They can use the Terraform blueprint to ensure that RDS configurations adhere to organizational standards and best practices.
+    - System architects design the overall system architecture, including how the database fits into the broader application ecosystem. They can use Terraform to model the infrastructure and ensure that it aligns with the architectural design.
+    - DBAs are primarily responsible for the design, configuration, and maintenance of the database. They can use the Terraform blueprint to define the RDS instance, manage backups, set up monitoring, and ensure optimal performance.
+    - DevOps engineers play a key role in automating infrastructure and deployment processes. They can leverage the Terraform blueprint to define and provision the AWS resources needed for Amazon RDS, integrating it into CI/CD pipelines.
+    - Developers may need to understand the database configurations and connections as they develop applications that interact with Amazon RDS. They can collaborate with DBAs and use the Terraform blueprint as a reference for the database setup.
+
+## Introduction
 - This Terraform scripts are used to create various AWS resources, including a Virtual Private Cloud (VPC), security groups, Auto Scaling Groups (ASG),Amazon EC2 (Elastic Cloud Compute), Amazon RDS (Relational Database Service), AWS Cloudwatch, AWS KMS (Key Management Service), and AWS SNS (Simple Notification Service).
 - The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code.
 

@@ -1,4 +1,17 @@
 ## Hosting WordPress on AWS using terraform template
+
+## Description
+![Image](./aws-3t-wp.png)
+The Three-Tier Architecture for hosting WordPress on AWS, implemented through a IaC blueprint, can be utilized by various stakeholders involved in the development, deployment, and management of a WordPress website.  It provides a standardized and consistent approach to managing your infrastructure deployments across different environments, making it easier to maintain and evolve your applications over time.
+We have utilized resources such as the network layer, launch template, auto-scaling group, load balancer, Elastic file system RDS,  CloudFront, and route53 for 3- tier Architecture to Host WP in AWS
+- Who can use Three-Tier Architecture for Hosting WordPress on AWS
+    - Content creators and editors are the end users who interact with the WordPress interface to create and publish content. The Three-Tier Architecture ensures a reliable and scalable environment for managing website content.
+    - Cloud administrators can manage and monitor the AWS resources, ensuring that the EC2 instances, RDS databases, and other services are optimized for performance, cost, and compliance.
+    - Infrastructure engineers are responsible for setting up and maintaining the AWS resources needed for hosting WordPress. They can use Terraform to define the infrastructure as code, making it scalable and easy to manage.
+    - DevOps engineers play a crucial role in implementing and managing the infrastructure. They can use Terraform to define and deploy AWS resources, set up continuous integration/continuous deployment (CI/CD) pipelines, and manage configurations.
+    - Developers can leverage the Three-Tier Architecture to host and scale WordPress applications on AWS. They can work on customizing the WordPress site, developing plugins, and managing the codebase.
+
+## Introduction
 - This Terraform scripts are used to create various AWS resources, including a Virtual Private Cloud (VPC), security groups, Auto Scaling Groups (ASG),Elastic Load Balancers (ALB), Amazon Elastic File System (EFS), Amazon ElastiCache, Amazon RDS (Relational Database Service), AWS CloudFront, and Route 53 records.
 - The main.tf, variable.tf, provider.tf, and backend.tf files are typically used in a Terraform project to organize and configure your infrastructure code
 
